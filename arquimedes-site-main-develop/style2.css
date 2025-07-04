@@ -1,0 +1,491 @@
+:root {
+  --purple: #2d2070;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transform: .2s linear;
+
+}
+
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 9rem;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /*color: #333;*/
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color:#c4a8f9ca;
+  /* ou a cor roxa clara que está fora do footer */
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  /* Evita rolagem horizontal indesejada */
+}
+
+html {
+ font-size: 62.5%;
+ scroll-padding-top:6rem;
+ overflow-x:hidden;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #efecff;
+  color: #3b1f70;
+  padding: .9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.btn:hover {
+  background: #9f8bff;
+}
+
+h1 {
+  color: #ffff;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #efecff;
+  font-size: 1.8rem;
+  margin: 5px 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #efecff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+  font-size: 3rem;
+  color: var(--purple);
+  font-weight: bolder;
+}
+
+header .logo span {
+  color: #9f8bff;
+}
+
+header .navbar a {
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  color: #c6baff;
+}
+
+header .navbar a:hover {
+  color: var(--purple);
+}
+
+header .icons a {
+  font-size: 2.5rem;
+  color: #c6baff;
+  margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+  color: var(--purple);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5rem;
+  padding: 0.3rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1.5rem;
+  height: 40px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 0.8rem;
+  background: transparent;
+  color: var(--purple);
+  width: 140px;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c6baff;
+  font-size: 1.2rem;
+}
+
+.search-box button:hover {
+  color: var(--purple);
+}
+
+/*cadastro*/
+.login-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-login {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background-color: var(--purple);
+  color: #efecff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #4d39a3;
+  color: #fff;
+}
+
+/*fim*/
+
+header #toggler {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  pointer-events: all; /* mantém o clique funcionando */
+  z-index: -1; /* joga pra trás sem sumir com ele */
+
+}
+
+.navbar {
+  display: none;
+}
+
+#toggler:checked ~ .navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+
+header .fa-bars {
+  font-size: 3rem;
+  color: #c6baff;
+  border-radius: 5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  /*border: .1rem solid rgba(0, 0, 0, .3);*/
+  border: none;
+  display: none;
+}
+
+header .fa-bars:hover {
+  background-color: #e0cfff;
+}
+
+
+@media (max-width: 768px) {
+  header .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #efecff;
+    padding: 1rem 0;
+  }
+
+  header .navbar.active {
+    display: flex;
+  }
+
+  header #toggler {
+    display: block;
+  }
+}
+
+header #toggler.active .fa-bars {
+    display: none;
+}
+
+
+/*BOOK*/
+
+.book-gallery {
+  background-color: #c4a8f9ca;
+  margin-top: 12rem;
+  font-size: 1.9rem;
+  /*color: #775aad;*/
+  font-weight: bolder;
+  padding-top: 1rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 0px 0px;
+
+}
+
+.book-item {
+  width: 290px;
+  /* Aumentei um pouco a largura */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  /* Maior espaçamento interno */
+  transition: transform 0.3s ease;
+
+}
+
+.book-item:hover {
+  transform: scale(1.05);
+}
+
+.book-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.book-item h2 {
+  font-size: 2.5rem;
+  margin: 10px 0 5px;
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.book-item p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/*btnn*/
+.btnn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: var(--purple);
+  color: #efecff;
+  padding: .9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-align: center;
+  border: none;
+}
+
+.btnn:hover {
+  background: var(--purple);
+}
+
+/*FOOTER*/
+.footer {
+    width: 100vw; /* Faz o footer ocupar toda a largura da tela */
+    background: #0d0149;
+    padding: 0rem 0rem; /* Espaçamento ajustado */
+}
+
+.footer .footer-container{
+  display: flex; 
+  flex-wrap: wrap;
+  gap:1.5rem; 
+  flex-direction: row; /* Organiza o conteúdo em coluna */
+  align-items: center;
+}
+
+.footer .footer-container .box{
+  flex: 1 1 25rem;
+  background: #0d0149;
+  
+}
+
+.footer .footer-container .box h3{
+  color: #efecff;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  font-family: serif;
+  text-align: center;
+}
+
+.footer .footer-container .box h2{
+  color: #efecff;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  text-align: center;
+  font-family: serif;
+}
+
+.footer .footer-container .box a {
+  display: block;
+  color: #9f8bff;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  border-radius: 5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer .footer-container .box a:hover {
+  background-color: #9f8bff;
+  color: #2d2070;
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer .footer-container .box a.home-link:hover {
+  background-color: #9f8bff;
+  color: #2d2070;
+  text-decoration: none;
+}
+
+/*.footer .footer-container .box a{
+  display: block;
+  color: #9f8bff;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer .footer-container .box a:hover{
+  color: #efecff;
+  text-decoration: underline;
+  text-align: center;
+}*/
+
+.footer .footer-container .box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o email */
+}
+
+.footer .footer-container .box input[type="email"] {
+    width: 80%; /* Aumenta a largura do campo de email */
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5rem;
+}
+
+
+.footer .footer-container .box-footer{
+  
+  flex: 1 1 100%;
+  background: #2d2070;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer .footer-container .box:first-child {
+    margin-left: 2rem; /* Adiciona espaço à esquerda */
+}
+.footer .footer-container .box:last-child {
+    margin-right: 2rem; /* Move "Contatos" um pouco para a direita */
+}
+
+.footer .footer-container {
+    justify-content: space-between; /* Distribui os boxes de forma uniforme */
+}
+
+
+/*responsividade*/
+@media (max-width: 991px){
+  
+html {
+ font-size: 55%;
+ 
+}
+
+.footer {
+    padding: 2rem 1rem;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px){
+
+header .fa-bars{
+  display: block;
+}
+
+
+ header .navbar{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #efecff;
+  border-top: .1rem solid rgba(0,0,0,.1);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header #toggler:checked ~ .navbar{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header .navbar a{
+  display: block;
+  color: #0d0149;
+  border-radius: 2rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  background-color: #c6baff;
+  display: block;
+}
+
+
+   header .navbar a:hover {
+    background-color: var(--purple); /* roxo escuro */
+    color: #efecff;
+  }
+
+  
+
+.home .content h3{
+  font-size: 5rem;
+}
+
+.home .content span{
+  font-size: 2.5rem;
+}
+
+}
